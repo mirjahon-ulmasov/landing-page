@@ -45,24 +45,19 @@ const setActive = (id: number): void => {
 
 <style lang="scss" scoped>
 .startup {
-  height: 100vh;
+  min-height: 100vh;
   padding: 5rem 7rem;
   background-color: #000;
   border-top: 1px solid #222;
-
   .card-list {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 1rem;
     justify-content: center;
-
-    h1 {
-      font-size: 50px;
-      font-weight: 700;
-      text-align: right;
-    }
     .card-item {
       display: flex;
-      width: 18rem;
+      min-width: 18rem;
+      max-width: 18rem;
       height: 25rem;
       margin: 2rem;
       padding: 2rem;
@@ -71,11 +66,31 @@ const setActive = (id: number): void => {
       flex-direction: column;
       justify-content: space-between;
       border-image-source: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
-    }
 
+      h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        text-align: right;
+      }
+    }
     .active {
       background: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
       animation: animation 1s;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .startup {
+    padding: 2rem;
+    .card-list {
+      display: flex;
+      margin-top: 1rem;
+      .card-item {
+        min-width: 15rem;
+        max-width: 15rem;
+        height: 20rem;
+        margin: 1rem;
+      }
     }
   }
 }

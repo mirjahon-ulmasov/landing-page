@@ -1,0 +1,11 @@
+<svg id="Icon_feather-plus-square" data-name="Icon feather-plus-square" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26.518" height="26.519" viewBox="0 0 26.518 26.519">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.969" y1="0.036" x2="0.067" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#73f7b1"/>
+      <stop offset="1" stop-color="#295db5"/>
+    </linearGradient>
+  </defs>
+  <path id="Контур_10" data-name="Контур 10" d="M6.978,3H25.541a3.982,3.982,0,0,1,3.978,3.978V25.541a3.982,3.982,0,0,1-3.978,3.978H6.978A3.982,3.982,0,0,1,3,25.541V6.978A3.982,3.982,0,0,1,6.978,3ZM25.541,26.867a1.327,1.327,0,0,0,1.326-1.326V6.978a1.327,1.327,0,0,0-1.326-1.326H6.978A1.327,1.327,0,0,0,5.652,6.978V25.541a1.327,1.327,0,0,0,1.326,1.326Z" transform="translate(-3 -3)" fill="url(#linear-gradient)"/>
+  <path id="Контур_11" data-name="Контур 11" d="M19.152,22.607H16.5V12h2.652Z" transform="translate(-4.567 -4.044)" fill="url(#linear-gradient)"/>
+  <path id="Контур_12" data-name="Контур 12" d="M22.607,19.152H12V16.5H22.607Z" transform="translate(-4.044 -4.567)" fill="url(#linear-gradient)"/>
+</svg>

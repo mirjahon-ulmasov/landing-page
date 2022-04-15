@@ -4,9 +4,7 @@
   <section class="intro">
     <div class="border">
       <nav class="navbar">
-        <div class="logo">
-          <h2>AloqaVentures <span>&reg;</span></h2>
-        </div>
+        <img src="@/assets/images/logo.svg" alt="logo" />
         <ul class="nav-links">
           <li>
             <a href="#">О Нас</a>
@@ -57,6 +55,7 @@
 
   .border {
     height: 100%;
+    padding: 0 2rem;
     border-top: 1px solid #0e987a;
     border-left: 1px solid #0e987a;
     border-right: 1px solid #0e987a;
@@ -64,38 +63,27 @@
     .navbar {
       width: 80%;
       display: flex;
-      margin: -1.8rem auto;
+      margin: -2.5rem auto;
       padding: 1rem 2rem;
       align-items: center;
       background-color: #000;
       justify-content: space-between;
+      align-items: flex-start;
 
-      .logo {
-        h2 {
-          background: transparent
-            linear-gradient(180deg, #9de6a0 0%, #004a9e 100%) 0% 0% no-repeat
-            padding-box;
-          font-size: 26px;
-          font-weight: 900;
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-
-          span {
-            font-size: 14px;
-          }
-        }
-      }
       .nav-links {
         width: 70%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-end;
+        flex-wrap: wrap;
 
         li {
+          display: inline-block;
           a {
             color: #fff;
-            font-size: 13px;
+            font-size: 0.8em;
             font-weight: 500;
+            display: inline-block;
+            padding: 1rem 0.5rem;
             text-decoration: none;
             text-transform: uppercase;
           }
@@ -113,17 +101,18 @@
       align-items: center;
       flex-direction: column;
       h1 {
-        font-size: 40px;
+        font-size: 2.5em;
       }
       h4 {
         max-width: 40rem;
       }
       .actions {
+        margin-top: 2rem;
         button {
           color: #fff;
-          font-size: 16px;
+          font-size: 1em;
           font-weight: 500;
-          margin: 2rem 1rem;
+          margin: 0.5rem 1rem;
           border-radius: 5px;
           padding: 0.7rem 3rem;
           border: 1px solid #54a399;
@@ -145,6 +134,22 @@
             background: #fff;
             border: 1px solid transparent;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro {
+    padding: 2rem 1rem 0 1rem;
+    .border {
+      padding: 0 1rem;
+      .navbar {
+        width: 100%;
+        justify-content: center;
+        .nav-links {
+          display: none;
         }
       }
     }

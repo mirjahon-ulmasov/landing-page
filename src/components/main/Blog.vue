@@ -38,28 +38,28 @@
       <h1>Наши партнеры</h1>
       <div class="grid-list">
         <div class="grid-item">
-          <img src="@/assets/images/it-park.png" alt="it-park" />
+          <img src="@/assets/images/it-park.svg" alt="it-park" />
         </div>
         <div class="grid-item">
           <img src="@/assets/images/aloqa.png" alt="aloqabank" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/uzvca.png" alt="uzvca" />
+          <img src="@/assets/images/uzvca.svg" alt="uzvca" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/it-park.png" alt="it-park" />
+          <img src="@/assets/images/it-park.svg" alt="it-park" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/mercury.png" alt="mercury" />
+          <img src="@/assets/images/mercury.svg" alt="mercury" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/go-global.png" alt="go-global" />
+          <img src="@/assets/images/go-global.svg" alt="go-global" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/most.png" alt="most" />
+          <img src="@/assets/images/most.svg" alt="most" />
         </div>
         <div class="grid-item">
-          <img src="@/assets/images/uzcard.png" alt="uzcard" />
+          <img src="@/assets/images/uzcard.svg" alt="uzcard" />
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
       p {
         a {
           color: #000;
-          font-size: 15px;
+          font-size: 1.2em;
           font-weight: 800;
         }
       }
@@ -93,11 +93,13 @@
     .card-list {
       display: flex;
       margin-top: 3rem;
+      flex-wrap: wrap;
       justify-content: center;
 
       .card-item {
         display: flex;
         height: 22rem;
+        min-width: 20rem;
         max-width: 20rem;
         margin: 1rem;
         flex-direction: column;
@@ -116,12 +118,12 @@
           justify-content: space-between;
           h4 {
             color: #000;
-            font-size: 20px;
+            font-size: 1.25em;
             font-weight: 700;
           }
           p {
             color: #000;
-            font-size: 16px;
+            font-size: 1em;
           }
         }
       }
@@ -129,8 +131,9 @@
     .grid-list {
       display: grid;
       grid-gap: 1rem;
-      margin-top: 2rem;
-      grid-template-columns: auto auto auto auto;
+      max-width: 60rem;
+      margin: 2rem auto;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
 
       .grid-item {
         height: 10rem;
@@ -139,9 +142,31 @@
         background-color: #fff;
         border: 1px solid #eee;
         img {
-          max-width: 10rem;
           height: auto;
+          max-width: 10rem;
           object-fit: contain;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .blog {
+    padding: 2rem;
+    .container {
+      margin-bottom: 2rem;
+      .card-list {
+        margin-top: 1rem;
+        .card-item {
+          height: 18rem;
+        }
+      }
+      .grid-list {
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        .grid-item {
+          img {
+            max-width: 8rem;
+          }
         }
       }
     }

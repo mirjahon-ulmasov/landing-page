@@ -18,7 +18,7 @@
 
 <style lang="scss" scoped>
 .contacts {
-  height: 70vh;
+  min-height: 70vh;
   position: relative;
   background-color: rgb(22, 22, 22);
 
@@ -36,21 +36,33 @@
 
     .top {
       h2 {
-        font-size: 30px;
+        font-size: 2em;
         font-weight: 600;
       }
       p {
-        margin-top: 1rem;
         color: #ccc;
+        font-size: 1.2em;
+        margin-top: 1rem;
         line-height: 1.2;
       }
     }
     .bottom {
       h4 {
         font-weight: 600;
-        font-size: 17px;
+        font-size: 1.3em;
         letter-spacing: 0.7px;
       }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contacts {
+    min-height: 50vh;
+    .info {
+      width: 17rem;
+      height: 17rem;
+      top: 5vh;
+      left: calc((100% - 17rem) / 2);
     }
   }
 }

@@ -27,8 +27,6 @@
         <h4>АБДУЛЛАЕВ АБДУЛЛА</h4>
         <p>Проект Менеджер</p>
       </div>
-    </div>
-    <div class="team-list">
       <div class="team-member">
         <img src="@/assets/images/girl.jpeg" alt="team member" />
         <h4>ТАИРОВА КАМИЛА</h4>
@@ -54,10 +52,10 @@
 
 <style lang="scss" scoped>
 p {
-  margin-top: 1rem;
   color: #ccc;
+  font-size: 1em;
+  margin-top: 1rem;
   line-height: 1.2;
-  font-size: 14px;
 }
 .team {
   min-height: 100vh;
@@ -75,19 +73,20 @@ p {
     p {
       a {
         color: #fff;
-        font-size: 16px;
+        font-size: 1.2em;
         font-weight: 600;
         cursor: pointer;
       }
     }
   }
   .team-list {
-    display: flex;
-    margin-top: 3rem;
-    justify-content: space-between;
+    max-width: 70rem;
+    margin: 3rem auto;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
     .team-member {
-      width: 20%;
       display: flex;
       max-width: 15rem;
       flex-direction: column;
@@ -98,16 +97,15 @@ p {
       }
       h4 {
         margin-top: 1rem;
-        font-size: 15px;
+        font-size: 1.2em;
         font-weight: 600;
       }
     }
     .want-member {
-      width: 20%;
+      width: 15rem;
       height: 15rem;
       padding: 2rem;
       display: flex;
-      max-width: 15rem;
       flex-direction: column;
       justify-content: center;
       border: 7px solid;
@@ -115,10 +113,20 @@ p {
       border-image-source: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
 
       h2 {
-        font-size: 18px;
+        font-size: 1.4em;
         font-weight: 600;
         line-height: 1.2;
       }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .team {
+    padding: 2rem;
+    
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }

@@ -51,12 +51,13 @@
 
 <style lang="scss" scoped>
 .projects {
-  height: 100vh;
+  min-height: 100vh;
   padding: 5rem 7rem;
   background-color: #fff;
 
   header {
     display: flex;
+    max-width: 100%;
     align-items: center;
     justify-content: space-between;
     h1 {
@@ -66,7 +67,7 @@
     p {
       a {
         color: #000;
-        font-size: 15px;
+        font-size: 1.2em;
         font-weight: 800;
       }
     }
@@ -75,14 +76,16 @@
   .card-list {
     display: flex;
     margin-top: 5rem;
+    flex-wrap: wrap;
     justify-content: center;
 
     .card-item {
       display: flex;
       height: 25rem;
       padding: 2rem;
-      max-width: 22rem;
-      width: calc(100% / 3);
+      min-width: 20rem;
+      max-width: 20rem;
+      margin: 1rem;
       flex-direction: column;
       border-right: 2px solid #eee;
 
@@ -101,6 +104,21 @@
           font-size: 16px;
           margin-top: 1rem;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .projects {
+    padding: 2rem;
+
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5em;
       }
     }
   }

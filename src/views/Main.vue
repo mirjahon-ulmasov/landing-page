@@ -24,12 +24,16 @@ import FAQ from "@/components/main/FAQ.vue";
 import Team from "@/components/main/Team.vue";
 import Contacts from "@/components/main/Contacts.vue";
 import Footer from "@/components/main/Footer.vue";
-
 </script>
 
 <style lang="scss" scoped>
 .main {
   position: relative;
   min-height: calc(100vh - 6rem);
+}
+@media only screen and (max-width: 768px) {
+  .main {
+    font-size: 12px;
+  }
 }
 </style>

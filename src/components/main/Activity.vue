@@ -39,27 +39,29 @@
 <style lang="scss" scoped>
 .activity {
   padding: 0 3rem;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #000;
+  align-items: stretch;
+  display: flex;
 
   .border {
     z-index: 2;
-    height: 100%;
+    width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     border-left: 1px solid #0e987a;
     border-right: 1px solid #0e987a;
     .image {
-      width: 50%;
       z-index: 1;
+      width: 50%;
       height: 40rem;
-      margin-left: -10rem;
+      margin-left: -5rem;
       border-radius: 1rem;
-      background-image: url("../../assets/images/road.jpeg");
+      background-image: url("../../assets/images/road.jpg");
     }
 
     .content {
-      width: 50%;
+      width: calc(50% + 10rem);
       color: #fff;
       padding: 0 3rem;
       line-height: 1.1;
@@ -85,8 +87,21 @@
         p {
           margin: 1rem 0;
           max-width: 35rem;
-          font-size: 17px;
+          font-size: 1em;
           font-weight: 300;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .activity {
+    padding: 0 1rem;
+    .border {
+      .content {
+        padding: 0 2rem;
+        .part {
+          margin: 1rem 0;
         }
       }
     }
