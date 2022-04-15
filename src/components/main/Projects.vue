@@ -4,40 +4,46 @@
   <section class="projects">
     <header>
       <h1>Проинвестированные проекты</h1>
-      <a href="#">Все проекты ></a>
+      <p><a href="#">Все проекты</a></p>
     </header>
     <div class="card-list">
       <div class="card-item">
-        <img src="@/assets/images/road.jpeg" alt="google" />
-        <h4>Google</h4>
-        <p>
-          Google- американская транснациональная корпорация в составе холдинга
-          Alphabet, инвестирующая в интернет- поиск, облачные вычисления и
-          рекламные технологии. Google поддерживает и разрабатывает ряд
-          интернет- сервисов и продуктов и получает прибыль в первую очередь от
-          рекламы через свою программу
-        </p>
+        <img src="@/assets/images/yandex.svg" alt="yandex" />
+        <div class="content">
+          <h4>Google</h4>
+          <p>
+            Google- американская транснациональная корпорация в составе холдинга
+            Alphabet, инвестирующая в интернет- поиск, облачные вычисления и
+            рекламные технологии. Google поддерживает и разрабатывает ряд
+            интернет- сервисов и продуктов и получает прибыль в первую очередь
+            от рекламы через свою программу
+          </p>
+        </div>
       </div>
       <div class="card-item">
-        <img src="@/assets/images/road.jpeg" alt="google" />
-        <h4>Yandex</h4>
-        <p>
-          «Яндекс» - транснациональная компания в отрасли информационных
-          технологий, чьё головное юридическое лицо зарегистрировано в
-          Нидерландах, владеющая одноимённой системой поиска в интернете,
-          интернет- порталом и веб-службами в нескольких странах.
-        </p>
+        <img src="@/assets/images/yandex.svg" alt="yandex" />
+        <div class="content">
+          <h4>Yandex</h4>
+          <p>
+            «Яндекс» - транснациональная компания в отрасли информационных
+            технологий, чьё головное юридическое лицо зарегистрировано в
+            Нидерландах, владеющая одноимённой системой поиска в интернете,
+            интернет- порталом и веб-службами в нескольких странах.
+          </p>
+        </div>
       </div>
       <div class="card-item">
-        <img src="@/assets/images/road.jpeg" alt="google" />
-        <h4>Yahoo!</h4>
-        <p>
-          Yahoo!- американская компания, владевшая второй по популярности в мире
-          поисковой системой и предоставляющая ряд сервисов, объединенных
-          интернет-порталом Yahoo! Directory; портал включает в себя популярный
-          сервис электронной почты Yahoo! Mail, один из старейших и наиболее
-          популярных в Интернете.
-        </p>
+        <img src="@/assets/images/yandex.svg" alt="yandex" />
+        <div class="content">
+          <h4>Yahoo!</h4>
+          <p>
+            Yahoo!- американская компания, владевшая второй по популярности в
+            мире поисковой системой и предоставляющая ряд сервисов, объединенных
+            интернет-порталом Yahoo! Directory; портал включает в себя
+            популярный сервис электронной почты Yahoo! Mail, один из старейших и
+            наиболее популярных в Интернете.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -45,25 +51,57 @@
 
 <style lang="scss" scoped>
 .projects {
-  padding: 5rem;
+  height: 100vh;
+  padding: 5rem 7rem;
   background-color: #fff;
-  border-top: 1px solid #222;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      font-weight: 700;
+      color: #000;
+    }
+    p {
+      a {
+        color: #000;
+        font-size: 15px;
+        font-weight: 800;
+      }
+    }
+  }
 
   .card-list {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 5rem;
     justify-content: center;
 
     .card-item {
       display: flex;
-      width: 18rem;
       height: 25rem;
-      margin: 2rem;
       padding: 2rem;
-      border: 7px solid;
-      border-image-slice: 1;
+      max-width: 22rem;
+      width: calc(100% / 3);
       flex-direction: column;
-      justify-content: space-between;
+      border-right: 2px solid #eee;
+
+      img {
+        width: 10rem;
+      }
+      .content {
+        margin-top: 2rem;
+        h4 {
+          color: #000;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        p {
+          color: #000;
+          font-size: 16px;
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }

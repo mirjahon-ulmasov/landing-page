@@ -45,8 +45,8 @@ const setActive = (id: number): void => {
 
 <style lang="scss" scoped>
 .startup {
-  padding: 5rem;
   height: 100vh;
+  padding: 5rem 7rem;
   background-color: #000;
   border-top: 1px solid #222;
 
