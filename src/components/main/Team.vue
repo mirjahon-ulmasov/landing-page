@@ -6,6 +6,7 @@
       <h1>Команда</h1>
       <p><a href="#">Смотреть вакансии</a></p>
     </header>
+    <img class="rotating" src="@/assets/images/back-1.png" alt="back" />
     <div class="team-list">
       <div class="team-member">
         <img src="@/assets/images/girl.jpeg" alt="team member" />
@@ -58,6 +59,8 @@ p {
   line-height: 1.2;
 }
 .team {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
   padding: 5rem 7rem;
   background-color: #000;
@@ -71,13 +74,21 @@ p {
       color: #fff;
     }
     p {
+      z-index: 2;
       a {
         color: #fff;
         font-size: 1.2em;
         font-weight: 600;
-        cursor: pointer;
       }
     }
+  }
+  .rotating {
+    z-index: 1;
+    width: 50em;
+    position: absolute;
+    top: -10rem;
+    right: -10rem;
+    animation: rotate 30s linear infinite;
   }
   .team-list {
     max-width: 70rem;
@@ -87,6 +98,7 @@ p {
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
     .team-member {
+      z-index: 2;
       display: flex;
       max-width: 15rem;
       flex-direction: column;
@@ -102,6 +114,7 @@ p {
       }
     }
     .want-member {
+      z-index: 2;
       width: 15rem;
       height: 15rem;
       padding: 2rem;
@@ -110,6 +123,7 @@ p {
       justify-content: center;
       border: 7px solid;
       border-image-slice: 1;
+      backdrop-filter: blur(2px);
       border-image-source: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
 
       h2 {
@@ -123,7 +137,7 @@ p {
 @media only screen and (max-width: 768px) {
   .team {
     padding: 2rem;
-    
+
     header {
       flex-direction: column;
       align-items: flex-start;

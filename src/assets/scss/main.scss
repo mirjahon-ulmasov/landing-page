@@ -1,0 +1,16 @@
+.actions {
+  display: flex;
+  button {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    width: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0.5rem 1rem;
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+  }
+}

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="activity">
+  <section id="activity" class="activity">
     <div class="border">
       <div class="image" />
       <div class="content">

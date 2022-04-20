@@ -1,98 +1,177 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from "vue";
-import { Carousel, Slide } from "vue3-carousel";
+import { ref } from "vue";
 
-onMounted(() => {
-  window.addEventListener("resize", handleResize);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", handleResize);
-});
+const active = ref(1);
+const isActive = (id: number): boolean => {
+  return active.value === id;
+};
+const setActive = (id: number): void => {
+  active.value = id;
+};
 
-const width = ref(window.innerWidth);
-const handleResize = (event: any) => {
-  width.value = event.currentTarget.innerWidth;
+const getImageUrl = (name: string, type: string = "svg") => {
+  return new URL(`../../assets/images/${name}.${type}`, import.meta.url).href;
 };
 </script>
 
 <template>
   <section class="investment">
-    <h1>Направления инвестиций</h1>
-    <Carousel
-      :items-to-show="Math.floor(width / 350)"
-      :wrap-around="true"
-      class="carousel"
-    >
-      <Slide v-for="i in 10" :key="i">
-        <div class="carousel__item">
-          <img src="@/assets/images/ai.jpg" alt="ai" />
+    <div class="border">
+      <h1>Направления инвестиций</h1>
+      <div class="grid-list">
+        <div
+          class="grid-item"
+          @mouseover="setActive(1)"
+          :class="{ active: isActive(1) }"
+        >
+          <img
+            :src="getImageUrl(isActive(1) ? 'ai-white' : 'ai', 'svg')"
+            alt="ai"
+          />
           <h2>Ai</h2>
-          <p>
-            Искусственный интеллект (Ии; англ. artificial intelligence, Al) -
-            свойство интеллектуальных систем выполнять творческие функции,
-            которые традиционно считаются прерогативой человека
-          </p>
         </div>
-      </Slide>
-    </Carousel>
+        <div
+          class="grid-item"
+          @mouseover="setActive(2)"
+          :class="{ active: isActive(2) }"
+        >
+          <img
+            :src="getImageUrl(isActive(2) ? 'fintech-white' : 'fintech', 'svg')"
+            alt="fintech"
+          />
+          <h2>FinTech</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(3)"
+          :class="{ active: isActive(3) }"
+        >
+          <img
+            :src="
+              getImageUrl(
+                isActive(3) ? 'blockchain-white' : 'blockchain',
+                'svg'
+              )
+            "
+            alt="blockchain"
+          />
+          <h2>Blockchain</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(4)"
+          :class="{ active: isActive(4) }"
+        >
+          <img
+            :src="getImageUrl(isActive(4) ? 'edutech-white' : 'edutech', 'svg')"
+            alt="edutech"
+          />
+          <h2>EduTech</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(5)"
+          :class="{ active: isActive(5) }"
+        >
+          <img
+            :src="getImageUrl(isActive(5) ? 'ai-white' : 'ai', 'svg')"
+            alt="ai"
+          />
+          <h2>Ai</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(6)"
+          :class="{ active: isActive(6) }"
+        >
+          <img
+            :src="getImageUrl(isActive(6) ? 'fintech-white' : 'fintech', 'svg')"
+            alt="fintech"
+          />
+          <h2>FinTech</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(7)"
+          :class="{ active: isActive(7) }"
+        >
+          <img
+            :src="
+              getImageUrl(
+                isActive(7) ? 'blockchain-white' : 'blockchain',
+                'svg'
+              )
+            "
+            alt="blockchain"
+          />
+          <h2>Blockchain</h2>
+        </div>
+        <div
+          class="grid-item"
+          @mouseover="setActive(8)"
+          :class="{ active: isActive(8) }"
+        >
+          <img
+            :src="getImageUrl(isActive(8) ? 'edutech-white' : 'edutech', 'svg')"
+            alt="edutech"
+          />
+          <h2>EduTech</h2>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .investment {
-  padding: 5rem 0 5rem 5rem;
+  padding: 0 3rem;
+  display: flex;
   min-height: 100vh;
+  align-items: stretch;
   background-color: #000;
 
-  .carousel {
-    margin: 2rem 0;
-    .carousel__item {
-      text-align: left;
-      margin-right: 5rem;
+  .border {
+    flex-grow: 1;
+    padding: 5rem 7rem;
+    border-left: 1px solid #0e987a;
+    border-right: 1px solid #0e987a;
 
-      img {
-        width: 100%;
-        border: 1px solid #cccccc85;
-      }
-      h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-top: 1rem;
-        letter-spacing: 1.2px;
+    .grid-list {
+      display: grid;
+      grid-gap: 2rem;
+      max-width: 80rem;
+      margin: 4rem auto;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
-        &::after {
-          content: " ";
-          width: 10rem;
-          display: block;
-          margin: 1rem 0;
-          border: 2px solid;
-          border-image-slice: 1;
-          border-image-source: linear-gradient(
-            268deg,
-            #73f7b1 0%,
-            #295db5 100%
-          );
+      .grid-item {
+        width: 15rem;
+        height: 17rem;
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 4px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
+        background-color: #000;
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          letter-spacing: 1.2px;
         }
       }
-      p {
-        color: #eee;
-        font-size: 1em;
-        font-weight: 300;
+      .active {
+        background: linear-gradient(212deg, #73f7b1 0%, #295db5 100%);
+        animation: animation 1s;
       }
-    }
-    .carousel__slide {
-      padding: 10px;
-    }
-    .carousel__prev,
-    .carousel__next {
-      box-sizing: content-box;
-      border: 5px solid white;
     }
   }
 }
 @media only screen and (max-width: 768px) {
   .investment {
-    padding: 2rem 0 2rem 2rem;
+    padding: 2rem;
   }
 }
 </style>
