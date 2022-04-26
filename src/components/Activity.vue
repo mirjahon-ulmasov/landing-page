@@ -4,6 +4,7 @@
   <section id="activity" class="activity">
     <div class="border">
       <div class="image" />
+      <img class="back" src="@/assets/images/back-1.png" alt="back" />
       <div class="content">
         <div class="part">
           <h1>Наша миссия</h1>
@@ -39,6 +40,7 @@
 <style lang="scss" scoped>
 .activity {
   position: relative;
+  overflow: hidden;
   display: flex;
   z-index: 2;
   padding: 0 3rem;
@@ -61,6 +63,14 @@
       margin-left: -5rem;
       border-radius: 1rem;
       background-image: url("../assets/images/road.jpg");
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0.3;
+      width: 45rem;
     }
 
     .content {

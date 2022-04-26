@@ -110,7 +110,7 @@ p {
         position: absolute;
         top: -10rem;
         left: -10rem;
-        animation: rotate 30s linear infinite;
+        opacity: 0.5;
       }
       .team-list {
         margin: 3rem auto;
@@ -168,7 +168,7 @@ p {
 @media only screen and (max-width: 1024px) {
   .team {
     min-height: auto;
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
 
     .border {
       padding: 0;
@@ -184,8 +184,8 @@ p {
           margin: 1rem auto;
 
           .team-member {
-            min-width: 8.5rem;
-            max-width: 8.5rem;
+            min-width: 8rem;
+            max-width: 8rem;
             height: auto;
             margin: 0.5em;
             img {
@@ -193,30 +193,11 @@ p {
             }
           }
           .want-member {
-            min-width: 9rem;
-            max-width: 9rem;
+            min-width: 8rem;
+            max-width: 8rem;
             height: 10rem;
             padding: 0.5rem;
             margin: 0.5em;
-          }
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width: 320px) {
-  .team {
-    padding: 3rem 1rem;
-    .border {
-      .container {
-        .team-list {
-          .team-member {
-            min-width: 8rem;
-            max-width: 8rem;
-          }
-          .want-member {
-            min-width: 8rem;
-            max-width: 8rem;
           }
         }
       }

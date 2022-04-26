@@ -39,7 +39,6 @@ import animationUrl from "../assets/animation-2.json";
 .main {
   position: relative;
   background-color: #000;
-  min-height: calc(100vh - 6rem);
 
   .animation {
     z-index: 1;

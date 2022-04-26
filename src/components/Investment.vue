@@ -194,7 +194,7 @@ const getImageUrl = (name: string, type: string = "svg") => {
 @media only screen and (max-width: 1024px) {
   .investment {
     min-height: auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 
     .border {
       padding: 0;
@@ -221,12 +221,6 @@ const getImageUrl = (name: string, type: string = "svg") => {
         }
       }
     }
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .investment {
-    padding: 0 1rem;
   }
 }
 </style>
