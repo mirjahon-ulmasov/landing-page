@@ -38,33 +38,36 @@
 
 <style lang="scss" scoped>
 .activity {
+  position: relative;
+  display: flex;
+  z-index: 2;
   padding: 0 3rem;
   min-height: 100vh;
-  background-color: #000;
   align-items: stretch;
-  display: flex;
+  background-color: #000;
+  border-top: 1px solid #0a6955;
 
   .border {
     z-index: 2;
     width: 100%;
     display: flex;
+    padding: 5rem 0;
     align-items: flex-start;
     border-left: 1px solid #0e987a;
     border-right: 1px solid #0e987a;
     .image {
-      z-index: 1;
       width: 50%;
       height: 40rem;
       margin-left: -5rem;
       border-radius: 1rem;
-      background-image: url("../../assets/images/road.jpg");
+      background-image: url("../assets/images/road.jpg");
     }
 
     .content {
       width: calc(50% + 10rem);
       color: #fff;
       padding: 0 3rem;
-      line-height: 1.1;
+      line-height: 1.2;
       letter-spacing: normal;
 
       .part {
@@ -87,24 +90,41 @@
         p {
           margin: 1rem 0;
           max-width: 35rem;
-          font-size: 1em;
+          font-size: 1rem;
           font-weight: 300;
         }
       }
     }
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .activity {
-    padding: 0 1rem;
+    min-height: auto;
+    padding: 0 2rem;
+    border: none;
+
     .border {
+      border: none;
+      padding: 0;
+      .image {
+        display: none;
+      }
       .content {
-        padding: 0 2rem;
+        max-width: 40em;
+        padding: 0;
         .part {
-          margin: 1rem 0;
+          margin: 3em 0;
+          p {
+            font-weight: 200;
+          }
         }
       }
     }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .activity {
+    padding: 0 1rem;
   }
 }
 </style>

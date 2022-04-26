@@ -1,5 +1,13 @@
 <template>
   <main class="main">
+    <lottie-animation
+      class="animation"
+      :animation-data="animationUrl"
+      :auto-play="true"
+      :loop="true"
+      :speed="1"
+      ref="anim"
+    />
     <Intro />
     <Activity />
     <Investment />
@@ -14,26 +22,33 @@
 </template>
 
 <script setup lang="ts">
-import Intro from "@/components/main/Intro.vue";
-import Activity from "@/components/main/Activity.vue";
-import Investment from "@/components/main/Investment.vue";
-import Startup from "@/components/main/Startup.vue";
-import Projects from "@/components/main/Projects.vue";
-import Blog from "@/components/main/Blog.vue";
-import FAQ from "@/components/main/FAQ.vue";
-import Team from "@/components/main/Team.vue";
-import Contacts from "@/components/main/Contacts.vue";
-import Footer from "@/components/main/Footer.vue";
+import Intro from "@/components/Intro.vue";
+import Activity from "@/components/Activity.vue";
+import Investment from "@/components/Investment.vue";
+import Startup from "@/components/Startup.vue";
+import Projects from "@/components/Projects.vue";
+import Blog from "@/components/Blog.vue";
+import FAQ from "@/components/FAQ.vue";
+import Team from "@/components/Team.vue";
+import Contacts from "@/components/Contacts.vue";
+import Footer from "@/components/Footer.vue";
+import animationUrl from "../assets/animation-2.json";
 </script>
 
 <style lang="scss" scoped>
 .main {
   position: relative;
+  background-color: #000;
   min-height: calc(100vh - 6rem);
+
+  .animation {
+    z-index: 1;
+    position: fixed;
+  }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .main {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 </style>

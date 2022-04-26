@@ -11,7 +11,7 @@
           <h1>FAQ</h1>
           <p><a href="#">Все</a></p>
         </header>
-        <p>Ответы на часто задаваемые вопросы</p>
+        <p class="sub">Ответы на часто задаваемые вопросы</p>
         <div class="questions">
           <ul>
             <li>
@@ -62,8 +62,9 @@
     }
 
     .container {
-      width: 50rem;
-
+      width: 50%;
+      z-index: 2;
+      position: relative;
       header {
         display: flex;
         align-items: center;
@@ -71,12 +72,12 @@
         p {
           a {
             color: #fff;
-            font-size: 1em;
+            font-size: 1.2em;
             font-weight: 500;
           }
         }
       }
-      p {
+      .sub {
         color: #ccc;
         margin-top: 1rem;
         font-size: 1.1em;
@@ -98,25 +99,29 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .faq {
-    padding: 1rem;
-    .boder {
+    padding: 3rem 2rem;
+    min-height: auto;
+
+    .border {
+      padding: 0;
+      border: none;
+
       .logo {
-        top: 2rem;
-        left: 2rem;
+        display: none;
       }
+
       .container {
-        max-width: 100%;
-        .questions {
-          ul {
-            li {
-              padding: 1rem 0;
-            }
-          }
-        }
+        max-width: 30rem;
+        width: 100%;
       }
     }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .faq {
+    padding: 3rem 1rem;
   }
 }
 </style>

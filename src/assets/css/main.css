@@ -18,13 +18,16 @@ h1 {
 h4 {
   color: #eee;
   font-size: 1.2em;
-  margin-top: 1rem;
   font-weight: 300;
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  color-scheme: dark;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #00000077 inset;
 }
 
 @keyframes animation {

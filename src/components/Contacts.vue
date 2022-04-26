@@ -18,6 +18,8 @@
 
 <style lang="scss" scoped>
 .contacts {
+  position: relative;
+  z-index: 2;
   min-height: 70vh;
   position: relative;
   background-color: rgb(22, 22, 22);
@@ -48,6 +50,7 @@
     }
     .bottom {
       h4 {
+        margin-top: 1em;
         font-weight: 600;
         font-size: 1.3em;
         letter-spacing: 0.7px;

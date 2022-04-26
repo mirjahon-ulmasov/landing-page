@@ -6,7 +6,7 @@
       <div class="container">
         <header>
           <h1>Блог</h1>
-          <p><a href="#">Все</a></p>
+          <p><RouterLink :to="{ name: 'blogs' }">Все</RouterLink></p>
         </header>
         <div class="card-list">
           <div class="card-item">
@@ -70,17 +70,24 @@
 
 <style lang="scss" scoped>
 .blog {
+  position: relative;
+  z-index: 2;
   padding: 0 3rem;
   min-height: 100vh;
   background-color: #000;
   border-top: 1px solid #0a6955;
 
   .border {
-    padding: 5rem 7rem;
+    padding: 5em 2em 2em 2em;
     border-left: 1px solid #0e987a;
     border-right: 1px solid #0e987a;
     .container {
-      margin-bottom: 5rem;
+      max-width: 70rem;
+      margin: 0 auto;
+
+      &:first-child {
+        margin-bottom: 5em;
+      }
       header {
         display: flex;
         align-items: center;
@@ -88,7 +95,7 @@
         p {
           a {
             color: #fff;
-            font-size: 1em;
+            font-size: 1.2em;
             font-weight: 500;
           }
         }
@@ -101,10 +108,10 @@
 
         .card-item {
           display: flex;
-          height: 22rem;
-          min-width: 20rem;
-          max-width: 20rem;
           margin: 1rem;
+          height: 19rem;
+          min-width: 18rem;
+          max-width: 18rem;
           flex-direction: column;
 
           img {
@@ -153,22 +160,51 @@
     }
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .blog {
+    min-height: auto;
     padding: 2rem;
-    .container {
-      margin-bottom: 2rem;
-      .card-list {
-        margin-top: 1rem;
-        .card-item {
-          height: 18rem;
+    border: none;
+    .border {
+      padding: 0;
+      border: none;
+
+      .container {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          p {
+            margin-top: 1em;
+          }
+        }
+        .card-list {
+          margin-top: 2rem;
+          .card-item {
+            .content {
+              height: auto;
+              p {
+                margin-top: 1rem;
+              }
+            }
+          }
         }
       }
-      .grid-list {
-        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-        .grid-item {
-          img {
-            max-width: 8rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .blog {
+    padding: 2rem 1rem;
+    .border {
+      .container {
+        .grid-list {
+          grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+          .grid-item {
+            height: 6rem;
+            img {
+              max-width: 6rem;
+            }
           }
         }
       }
