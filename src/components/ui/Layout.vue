@@ -2,6 +2,13 @@
 import Navigation from "@/components/ui/Navigation.vue";
 import animationUrl from "../../assets/animation-2.json";
 import Footer from "../Footer.vue";
+import { ref } from "vue";
+
+const menu = ref(false);
+
+const getImageUrl = (name: string, type: string = "svg") => {
+  return new URL(`../../assets/images/${name}.${type}`, import.meta.url).href;
+};
 </script>
 
 <template>
@@ -11,13 +18,56 @@ import Footer from "../Footer.vue";
         style="cursor: pointer"
         @click="$router.push({ name: 'main' })"
         src="@/assets/images/logo.svg"
+        class="logo"
         alt="logo"
+      />
+      <img
+        :src="getImageUrl(menu ? 'close' : 'menu', 'svg')"
+        @click="menu = !menu"
+        class="menu-btn"
+        alt="menu"
       />
       <nav class="navbar">
         <Navigation />
       </nav>
       <div class="lang">uz</div>
     </header>
+    <div v-show="menu" class="menu">
+      <div class="lang">uz</div>
+      <ul class="nav-links">
+        <li>
+          <a href="#activity">О Нас</a>
+        </li>
+        <li>
+          <a href="#">Деятельность</a>
+        </li>
+        <li>
+          <a href="#">Команда</a>
+        </li>
+        <li>
+          <a href="#">Блог</a>
+        </li>
+        <li>
+          <a href="#">Проекты</a>
+        </li>
+        <li>
+          <a href="#">Партнеры</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+      <div class="actions">
+        <button @click="$router.push('/apply')">Подать заявку</button>
+        <button @click="$router.push('/login')">
+          <img src="@/assets/images/user.svg" alt="user" />
+          Войти в кабинет
+        </button>
+      </div>
+    </div>
     <main class="main">
       <lottie-animation
         class="animation"
@@ -27,7 +77,7 @@ import Footer from "../Footer.vue";
         :speed="1"
         ref="anim"
       />
-      <slot name="body"> </slot>
+      <slot name="body"></slot>
     </main>
     <footer>
       <Footer />
@@ -36,6 +86,7 @@ import Footer from "../Footer.vue";
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/menu.scss";
 .wrapper {
   min-height: 100vh;
   background-color: #000;
@@ -85,6 +136,20 @@ import Footer from "../Footer.vue";
       border: 1px solid #0e987a;
       cursor: pointer;
     }
+
+    .menu-btn {
+      display: none;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      cursor: pointer;
+      position: absolute;
+      transition: 0.3s linear;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
   }
 
   .main {
@@ -114,9 +179,40 @@ import Footer from "../Footer.vue";
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 2rem 1rem 0 1rem;
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    min-height: 100vh;
+    background-color: #000;
+
+    .header {
+      padding: 0;
+      height: 5rem;
+      align-items: flex-end;
+      justify-content: center;
+
+      &:before,
+      &:after,
+      .navbar,
+      .lang {
+        display: none;
+      }
+      .logo {
+        transform: scale(0.7);
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    .main {
+      &:before,
+      &:after {
+        border: none;
+      }
+      .animation {
+        display: none;
+      }
+    }
   }
 }
 </style>

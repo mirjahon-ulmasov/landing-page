@@ -93,6 +93,8 @@ const menu = ref(false);
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/menu.scss";
+
 .intro {
   height: 100vh;
   padding: 3em 3em 0 3em;
@@ -118,42 +120,6 @@ const menu = ref(false);
         background: #fff;
         border: 1px solid transparent;
       }
-    }
-  }
-
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 5;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-
-    .lang {
-      top: 1.5rem;
-      right: 1.5rem;
-    }
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      margin: 7rem 2rem 4rem 2rem;
-      li {
-        a {
-          color: #fff;
-          font-size: 1.3em;
-          font-weight: 500;
-          padding: 0.5em 1em;
-          display: inline-block;
-          text-decoration: none;
-          text-transform: uppercase;
-        }
-      }
-    }
-
-    .actions {
-      margin-left: 2rem;
-      flex-direction: column;
     }
   }
   .border {

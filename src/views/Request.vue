@@ -17,7 +17,7 @@ import Layout from "../components/ui/Layout.vue";
               </div>
               <div class="form-input small">
                 <label> Прикрепить презентацию</label>
-                <input type="text" />
+                <input type="file" />
               </div>
             </div>
             <div class="row">
@@ -100,7 +100,7 @@ import Layout from "../components/ui/Layout.vue";
                 <input type="text" />
               </div>
             </div>
-            <div class="row">
+            <div class="row" style="align-items: flex-start">
               <div class="form-input big">
                 <label>Опишите подробнее ваш запрос на ресурсы</label>
                 <textarea rows="7"></textarea>
@@ -161,10 +161,11 @@ import Layout from "../components/ui/Layout.vue";
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        align-items: flex-end;
 
         .form-input {
           display: flex;
-          min-width: 15em;
+          min-width: 14em;
           margin: 1.5em 2em 1.5em 0;
           flex-direction: column;
           align-items: flex-start;
@@ -187,13 +188,13 @@ import Layout from "../components/ui/Layout.vue";
           }
         }
         .full {
-          width: 100%;
+          width: 94%;
         }
         .big {
-          width: 63%;
+          width: 62%;
         }
         .small {
-          width: 30%;
+          width: 29%;
         }
       }
     }
@@ -218,6 +219,41 @@ import Layout from "../components/ui/Layout.vue";
           color: #000;
           background: #fff;
           border: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .request {
+    .container {
+      padding: 2rem 1.5rem;
+      form {
+        .row {
+          .form-input {
+            margin: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .request {
+    .container {
+      form {
+        .row {
+          .form-input {
+            margin: 1rem 0;
+          }
+          .big {
+            width: 94%;
+          }
+          .small {
+            width: 94%;
+          }
         }
       }
     }
