@@ -50,4 +50,12 @@ import animationUrl from "../assets/animation-2.json";
     font-size: 13px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .main {
+    .animation {
+      display: none;
+    }
+  }
+}
 </style>
