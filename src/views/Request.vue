@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import Layout from "../components/ui/Layout.vue";
+import Dropdown from "../components/ui/Dropdown.vue";
+
+const getModel = (val: string) => {
+  console.log(val);
+};
 </script>
 
 <template>
@@ -16,8 +21,11 @@ import Layout from "../components/ui/Layout.vue";
                 <input type="text" />
               </div>
               <div class="form-input small">
-                <label> Прикрепить презентацию</label>
-                <input type="file" />
+                <label> Прикрепить презентацию </label>
+                <label class="fileInput">
+                  <input type="file" />
+                  <img src="@/assets/images/clip.svg" alt="clip" />
+                </label>
               </div>
             </div>
             <div class="row">
@@ -29,7 +37,10 @@ import Layout from "../components/ui/Layout.vue";
             <div class="row">
               <div class="form-input small">
                 <label>Выберите направление</label>
-                <input type="text" />
+                <Dropdown
+                  :options="['Tashkent', 'Moscow', 'Dubai', 'New York']"
+                  @input="getModel"
+                />
               </div>
               <div class="form-input small">
                 <label>Сколько людей в команде</label>
@@ -37,13 +48,19 @@ import Layout from "../components/ui/Layout.vue";
               </div>
               <div class="form-input small">
                 <label>Модель бизнеса стартапа</label>
-                <input type="text" />
+                <Dropdown
+                  :options="['Tashkent', 'Moscow', 'Dubai', 'New York']"
+                  @input="getModel"
+                />
               </div>
             </div>
             <div class="row">
               <div class="form-input small">
                 <label>Наличие продаж у стартапа</label>
-                <input type="text" />
+                <Dropdown
+                  :options="['Tashkent', 'Moscow', 'Dubai', 'New York']"
+                  @input="getModel"
+                />
               </div>
               <div class="form-input big">
                 <label>Ссылка на продукт</label>
@@ -97,7 +114,10 @@ import Layout from "../components/ui/Layout.vue";
             <div class="row">
               <div class="form-input full">
                 <label>Какие ресурсы вам нужны для реализации проекта</label>
-                <input type="text" />
+                <Dropdown
+                  :options="['Tashkent', 'Moscow', 'Dubai', 'New York']"
+                  @input="getModel"
+                />
               </div>
             </div>
             <div class="row" style="align-items: flex-start">
@@ -107,13 +127,16 @@ import Layout from "../components/ui/Layout.vue";
               </div>
               <div class="form-input small">
                 <label>Откуда вы узнали про нас?</label>
-                <input type="text" />
+                <Dropdown
+                  :options="['Tashkent', 'Moscow', 'Dubai', 'New York']"
+                  @input="getModel"
+                />
               </div>
             </div>
           </form>
           <div class="actions">
-            <button>Отменить</button>
-            <button>Отправить</button>
+            <button type="button">Отменить</button>
+            <button type="submit">Отправить</button>
           </div>
         </div>
       </section>
@@ -171,7 +194,8 @@ import Layout from "../components/ui/Layout.vue";
           align-items: flex-start;
 
           input,
-          textarea {
+          textarea,
+          .fileInput {
             width: 100%;
             padding: 0.7em 1em;
             color: #fff;
@@ -184,6 +208,16 @@ import Layout from "../components/ui/Layout.vue";
             &:focus {
               outline: none;
               border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+          }
+          .fileInput {
+            cursor: pointer;
+            padding: 0.55em 1em;
+            input[type="file"] {
+              display: none;
+            }
+            img {
+              float: right;
             }
           }
         }

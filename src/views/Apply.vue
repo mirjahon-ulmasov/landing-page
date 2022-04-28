@@ -59,11 +59,14 @@ import Layout from "../components/ui/Layout.vue";
             </div>
             <div class="form-input">
               <label>Прикрепить CV</label>
-              <input type="file" />
+              <label class="fileInput">
+                <input type="file" />
+                <img src="@/assets/images/clip.svg" alt="clip" />
+              </label>
             </div>
             <div class="actions">
-              <button>Отменить</button>
-              <button>Отправить</button>
+              <button type="button">Отменить</button>
+              <button type="submit">Отправить</button>
             </div>
           </form>
         </div>
@@ -137,11 +140,12 @@ import Layout from "../components/ui/Layout.vue";
       }
 
       .form-input {
-        width: 100%;
+        display: flex;
         margin: 1.5em 0;
+        flex-direction: column;
 
-        input {
-          width: 100%;
+        input,
+        .fileInput {
           padding: 0.7em 1em;
           color: #fff;
           font-size: 1em;
@@ -155,9 +159,16 @@ import Layout from "../components/ui/Layout.vue";
             border: 1px solid rgba(255, 255, 255, 0.5);
           }
         }
-        /* input[type="file"] {
-          visibility: hidden;
-        } */
+        .fileInput {
+          cursor: pointer;
+          padding: 0.55em 1em;
+          input[type="file"] {
+            display: none;
+          }
+          img {
+            float: right;
+          }
+        }
       }
       .actions {
         margin-top: 3em;

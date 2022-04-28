@@ -39,7 +39,7 @@ import Layout from "../components/ui/Layout.vue";
               </ul>
             </div>
             <div class="actions">
-              <button>Отправить резюме</button>
+              <button type="button">Отправить резюме</button>
             </div>
           </div>
         </div>

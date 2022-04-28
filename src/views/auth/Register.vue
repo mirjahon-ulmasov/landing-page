@@ -45,8 +45,8 @@
           <input type="password" />
         </div>
         <div class="actions">
-          <button>Отменить</button>
-          <button>Зарегистрироваться</button>
+          <button type="button">Отменить</button>
+          <button type="submit">Зарегистрироваться</button>
         </div>
       </form>
       <RouterLink :to="{ name: 'login' }"

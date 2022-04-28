@@ -27,7 +27,7 @@
         </div>
         <RouterLink to="forgot-password">Забыли пароль?</RouterLink>
         <div class="actions">
-          <button>Войти</button>
+          <button type="submit">Войти</button>
         </div>
       </form>
       <RouterLink :to="{ name: 'register' }"
