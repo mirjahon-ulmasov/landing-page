@@ -77,6 +77,10 @@
   .footer {
     min-height: 40vh;
 
+    & > img {
+      transform: scale(0.7);
+    }
+
     .nav-links {
       width: 100%;
       margin: 1rem auto;

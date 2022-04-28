@@ -120,6 +120,7 @@ import Layout from "../components/ui/Layout.vue";
 
 @media only screen and (max-width: 768px) {
   .blogs {
+    font-size: 13px;
     padding: 2em 1.5em;
     .top {
       flex-direction: column;

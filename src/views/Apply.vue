@@ -107,15 +107,16 @@ import Layout from "../components/ui/Layout.vue";
             max-width: 15rem;
 
             h4 {
-              font-size: 1em;
+              font-size: 1.1em;
               line-height: 1.3;
               font-weight: 500;
             }
 
             p {
-              line-height: 1.3;
-              font-size: 0.8em;
+              color: #eee;
+              font-size: 0.9em;
               font-weight: 300;
+              line-height: 1.3;
               margin-top: 0.5em;
             }
           }
@@ -200,6 +201,7 @@ import Layout from "../components/ui/Layout.vue";
 
 @media only screen and (max-width: 425px) {
   .apply {
+    font-size: 13px;
     .container {
       padding: 1rem;
       form {

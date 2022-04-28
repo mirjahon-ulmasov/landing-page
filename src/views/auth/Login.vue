@@ -66,21 +66,19 @@ import animationUrl from "../../assets/animation-2.json";
 }
 
 @media only screen and (max-width: 800px) {
-  .login {
-    .container {
-      & > img {
-        transform: scale(0.7);
+  .login .container {
+    & > img {
+      transform: scale(0.7);
+    }
+    form {
+      width: 90%;
+      padding: 1em;
+      margin: 1em auto;
+      .form-input {
+        margin: 1em 0;
       }
-      form {
-        width: 90%;
-        padding: 1em;
-        margin: 1em auto;
-        .form-input {
-          margin: 1em 0;
-        }
-        .actions {
-          margin: 1em 0;
-        }
+      .actions {
+        margin: 1em 0;
       }
     }
   }

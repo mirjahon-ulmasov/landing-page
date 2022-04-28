@@ -109,6 +109,7 @@ import Layout from "../components/ui/Layout.vue";
 
 @media only screen and (max-width: 875px) {
   .vacancies {
+    font-size: 13px;
     padding: 2rem;
     .card-list {
       grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
