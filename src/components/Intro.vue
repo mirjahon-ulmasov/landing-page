@@ -4,10 +4,6 @@ import { Carousel, Slide } from "vue3-carousel";
 import imgUrl from "../assets/images/intro.png";
 import { ref } from "vue";
 
-const getImageUrl = (name: string, type: string = "svg") => {
-  return new URL(`../assets/images/${name}.${type}`, import.meta.url).href;
-};
-
 const menu = ref(false);
 </script>
 
@@ -17,7 +13,7 @@ const menu = ref(false);
       <div class="lang">uz</div>
       <header class="header">
         <img
-          :src="getImageUrl(menu ? 'close' : 'menu', 'svg')"
+          src="@/assets/images/menu.svg"
           @click="menu = !menu"
           class="menu-btn"
           alt="menu"
@@ -54,6 +50,12 @@ const menu = ref(false);
       </Carousel>
     </div>
     <div v-show="menu" class="menu">
+      <img
+        src="@/assets/images/close.svg"
+        @click="menu = !menu"
+        class="menu-btn"
+        alt="menu"
+      />
       <div class="lang">uz</div>
       <ul class="nav-links">
         <li>
@@ -99,6 +101,14 @@ const menu = ref(false);
   height: 100vh;
   padding: 3em 3em 0 3em;
   background-color: #000;
+  .menu-btn {
+    display: none;
+    top: 1.2rem;
+    left: 0.6rem;
+    cursor: pointer;
+    position: absolute;
+  }
+
   .actions {
     button {
       z-index: 2;
@@ -145,13 +155,9 @@ const menu = ref(false);
       background-color: #000;
       align-items: flex-start;
       justify-content: space-between;
+
       .menu-btn {
-        position: absolute;
-        top: 2rem;
-        left: 1rem;
-        display: none;
-        cursor: pointer;
-        z-index: 10;
+        z-index: 1;
       }
     }
 
@@ -209,6 +215,9 @@ const menu = ref(false);
   .intro {
     height: auto;
     padding: 3em 1em 0 1em;
+    .menu-btn {
+      display: block;
+    }
     .border {
       border: none;
       padding: 0;
@@ -219,14 +228,7 @@ const menu = ref(false);
         width: 100%;
         padding-top: 3rem;
         justify-content: center;
-        .menu-btn {
-          display: block;
-          transition: 0.3s linear;
 
-          &:hover {
-            transform: rotate(90deg);
-          }
-        }
         .actions {
           display: none;
         }
@@ -258,27 +260,13 @@ const menu = ref(false);
     }
   }
 }
-@media only screen and (max-width: 420px) {
-  .intro {
-    .border {
-      .header {
-        .menu-btn {
-          top: 1.2rem;
-          left: 0.6rem;
-        }
-        .logo {
-          transform: scale(0.7);
-        }
-      }
-      .carousel {
-        .carousel__item {
-          .hero {
-            h1 {
-              font-size: 1.5em;
-            }
-          }
-        }
-      }
+@media only screen and (max-width: 425px) {
+  .intro .border {
+    .header .logo {
+      transform: scale(0.7);
+    }
+    .carousel .carousel__item .hero h1 {
+      font-size: 1.5em;
     }
   }
 }

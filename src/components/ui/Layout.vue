@@ -5,24 +5,20 @@ import Footer from "../Footer.vue";
 import { ref } from "vue";
 
 const menu = ref(false);
-
-const getImageUrl = (name: string, type: string = "svg") => {
-  return new URL(`../../assets/images/${name}.${type}`, import.meta.url).href;
-};
 </script>
 
 <template>
   <div class="wrapper">
     <header class="header">
       <img
-        style="cursor: pointer"
         @click="$router.push({ name: 'main' })"
         src="@/assets/images/logo.svg"
+        style="cursor: pointer"
         class="logo"
         alt="logo"
       />
       <img
-        :src="getImageUrl(menu ? 'close' : 'menu', 'svg')"
+        src="@/assets/images/menu.svg"
         @click="menu = !menu"
         class="menu-btn"
         alt="menu"
@@ -33,6 +29,12 @@ const getImageUrl = (name: string, type: string = "svg") => {
       <div class="lang">uz</div>
     </header>
     <div v-show="menu" class="menu">
+      <img
+        src="@/assets/images/close.svg"
+        @click="menu = !menu"
+        class="menu-btn"
+        alt="menu"
+      />
       <div class="lang">uz</div>
       <ul class="nav-links">
         <li>
@@ -90,6 +92,13 @@ const getImageUrl = (name: string, type: string = "svg") => {
 .wrapper {
   min-height: 100vh;
   background-color: #000;
+  .menu-btn {
+    display: none;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    position: absolute;
+  }
 
   .header {
     position: relative;
@@ -136,20 +145,6 @@ const getImageUrl = (name: string, type: string = "svg") => {
       border: 1px solid #0e987a;
       cursor: pointer;
     }
-
-    .menu-btn {
-      display: none;
-      top: 1rem;
-      left: 1rem;
-      z-index: 10;
-      cursor: pointer;
-      position: absolute;
-      transition: 0.3s linear;
-
-      &:hover {
-        transform: rotate(90deg);
-      }
-    }
   }
 
   .main {
@@ -184,6 +179,9 @@ const getImageUrl = (name: string, type: string = "svg") => {
     min-height: 100vh;
     background-color: #000;
 
+    .menu-btn {
+      display: block;
+    }
     .header {
       padding: 0;
       height: 5rem;
@@ -198,9 +196,6 @@ const getImageUrl = (name: string, type: string = "svg") => {
       }
       .logo {
         transform: scale(0.7);
-      }
-      .menu-btn {
-        display: block;
       }
     }
 

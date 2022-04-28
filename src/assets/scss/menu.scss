@@ -6,6 +6,7 @@
   width: 100%;
   height: 100vh;
   background-color: #000;
+  animation: animation 0.4s linear;
 
   .lang {
     top: 1.5rem;
@@ -52,5 +53,14 @@
         border: 1px solid transparent;
       }
     }
+  }
+}
+
+@keyframes animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
