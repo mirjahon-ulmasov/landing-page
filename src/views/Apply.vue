@@ -107,9 +107,9 @@ import Layout from "../components/ui/Layout.vue";
             max-width: 15rem;
 
             h4 {
-              line-height: 1.3;
               font-size: 1em;
-              font-weight: 400;
+              line-height: 1.3;
+              font-weight: 500;
             }
 
             p {
@@ -180,6 +180,36 @@ import Layout from "../components/ui/Layout.vue";
             background: #fff;
             border: 1px solid #fff;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .apply .container {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .apply .container form .rule {
+    padding: 1em;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .apply {
+    .container {
+      padding: 1rem;
+      form {
+        .rule ul li {
+          margin: 0.5rem 0;
+        }
+        .actions {
+          margin-top: 1em;
+          align-items: center;
+          flex-direction: column;
         }
       }
     }

@@ -101,9 +101,17 @@ import animationUrl from "../../assets/animation-2.json";
   .login {
     flex-direction: column;
     justify-content: center;
+
+    .left {
+      & > img {
+        transform: scale(0.7);
+      }
+      .social-media {
+        margin-top: 1rem;
+      }
+    }
     .container {
       form {
-        width: 90%;
         padding: 1em;
         margin: 1em auto;
         .form-input {

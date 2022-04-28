@@ -107,6 +107,24 @@ import Layout from "../components/ui/Layout.vue";
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 875px) {
+  .vacancies {
+    padding: 2rem;
+    .card-list {
+      grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+      .card-item {
+        padding: 2em 1.5em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .vacancies {
+    padding: 2rem 1.5rem;
+    .card-list .card-item {
+      padding: 1.5rem 1rem;
+    }
+  }
 }
 </style>

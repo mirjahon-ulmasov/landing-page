@@ -68,6 +68,9 @@ import animationUrl from "../../assets/animation-2.json";
 @media only screen and (max-width: 800px) {
   .login {
     .container {
+      & > img {
+        transform: scale(0.7);
+      }
       form {
         width: 90%;
         padding: 1em;

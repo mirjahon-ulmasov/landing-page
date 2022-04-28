@@ -48,15 +48,17 @@ import Layout from "../components/ui/Layout.vue";
     align-items: center;
     justify-content: space-between;
 
-    span {
-      padding: 0.5em 2em;
-      border-bottom: 2px solid #333;
-      cursor: pointer;
-    }
-    .active {
-      border-bottom: 3px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(268deg, #73f7b1 0%, #295db5 100%);
+    .tabs {
+      span {
+        padding: 0.5em 2em;
+        border-bottom: 2px solid #333;
+        cursor: pointer;
+      }
+      .active {
+        border-bottom: 3px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(268deg, #73f7b1 0%, #295db5 100%);
+      }
     }
   }
   .card-list {
@@ -110,12 +112,32 @@ import Layout from "../components/ui/Layout.vue";
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .blogs {
+    padding: 2rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .blogs {
+    padding: 2em 1.5em;
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      .tabs {
+        margin-top: 2rem;
+      }
+    }
     .card-list {
       grid-gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
     }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .blogs .top .tabs span {
+    padding: 0.5em 1.2em;
   }
 }
 </style>
