@@ -10,10 +10,11 @@
     font-weight: 300;
     font-size: 0.9em;
     line-height: 1.5;
+    max-width: 80%;
     text-decoration: none;
+    display: inline-block;
     letter-spacing: 0.7px;
     cursor: pointer;
-    border-bottom: 1px solid #ccc;
   }
   .animation {
     z-index: 1;
